@@ -1,0 +1,1243 @@
+
+<!-- saved from url=(0085)http://rsj.beijing.gov.cn/integralpublic/settleperson/settlePersonTable?from=timeline -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>落户公示</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<meta http-equiv="X-UA-Compatible" content="IE=8,IE=EmulateIE8,IE=7,IE=EmulateIE7">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="http://rsj.beijing.gov.cn/integralpublic/static/js/census/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" id="theme" href="./落户公示36_files/theme-forest.css"><!--theme-default-->
+<link rel="stylesheet" type="text/css" href="./落户公示36_files/style.css">
+
+<script async="" src="./落户公示36_files/ta.js"></script><script type="text/javascript" src="./落户公示36_files/jquery.1.11.3.min.js"></script>
+<script type="text/javascript" src="./落户公示36_files/bootstrap.min.js"></script>
+<link href="./落户公示36_files/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="./落户公示36_files/bootstrap-combined.min.css" rel="stylesheet">
+<script src="./落户公示36_files/bootstrap-paginator.js"></script>
+<script type="text/javascript" src="./落户公示36_files/bootstrap-select.js"></script>
+
+
+<script src="./落户公示36_files/bootstrap-table.js"></script>
+<script src="./落户公示36_files/bootstrap-table-zh-CN.js"></script>
+<link href="./落户公示36_files/bootstrap-table.css" rel="stylesheet">
+
+
+<link href="./落户公示36_files/smart_wizard_vertical.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./落户公示36_files/jquery.smartWizard-2.0.min.js"></script>
+<script type="text/javascript" src="./落户公示36_files/jquery.validate.js"></script>
+<script type="text/javascript" src="./落户公示36_files/messages_zh.js"></script>
+<script type="text/javascript" src="./落户公示36_files/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="./落户公示36_files/bootstrap-datepicker.zh-CN.gbk.js"></script>
+
+<!--[if lt IE 9]>
+<script src="/integralpublic/static/js/census/ieCompatible/html5.js"></script>
+<script src="/integralpublic/static/js/census/ieCompatible/html5shiv.min.js"></script>
+<script src="/integralpublic/static/js/census/ieCompatible/respond.min.js"></script>
+<script type="text/javascript">
+/*
+$(function(){
+$('.nav.nav-tabs').each(function(){
+var numTabs = $('.nav-tabs').find('li').length;
+var tabWidth = 100 / numTabs;
+var tabPercent = tabWidth + "%";
+$('.nav-tabs li').width(tabPercent);
+});
+});
+*/
+</script>
+<style>
+/*fix ie8 tabs li 100% width problem */
+.nav-tabs{
+list-style-type:none;
+margin:0;
+width:100%;
+}
+.nav-tabs li{
+float:left;
+display: inline-block;
+}
+/**/
+</style>
+<![endif]-->
+<style>
+    /*fix odd scroll border */
+    html, body {
+        position: static;
+    }
+
+    /*for capinfo table*/
+
+
+    .bootstrap-table .table {
+        /* border-bottom: 1px solid #066a07;*/
+    }
+
+    .fixed-table-container {
+        border: 1px solid #004986;
+    }
+    .fixed-table-header {
+        border-bottom: 1px solid #004986;
+    }
+    .fixed-table-body {
+        height:auto;
+    }
+    .fixed-table-footer {
+        border-top: 1px solid #004986;
+    }
+    .fixed-table-container thead th {
+        border-left: 1px solid #004986;
+    }
+
+    .fixed-table-container tbody td {
+        border-left: 1px solid #004986;
+    }
+    .fixed-table-container tbody .selected td {
+        /*background-color: #066a07;*/
+    }
+    .bootstrap-table .table > thead > tr > th {
+        border-bottom: 2px solid #004986;
+    }
+
+
+    .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+        border-color: #004986;
+    }
+
+    .table > caption + thead > tr:first-child > th, .table > colgroup + thead > tr:first-child > th, .table > thead:first-child > tr:first-child > th, .table > caption + thead > tr:first-child > td, .table > colgroup + thead > tr:first-child > td, .table > thead:first-child > tr:first-child > td{
+        background-color: #0867b7;
+        color: #FFFFFF;
+    }
+</style>
+<script type="text/javascript">
+    var ctx = '/integralpublic';
+
+    function showModal(header,body,footer){
+        if(header){
+            $('#defModalHead').html(header);
+        }
+        if(body){
+            $('#defModalBody').html(body);
+        }
+        if(footer){
+            $('#defModalFooter').html(footer);
+        }
+        $('#modalBasic').modal('show');
+    }
+    function needAuthentication(){
+        window.location.href="/integralpublic/static/login";
+    }
+
+    function centerReload(url){
+        if(url && url!=''){
+            loadRemotePage($('.layoutCenterDiv'),url);
+        }
+    }
+    function rightReload(url){
+        if(url && url!=''){
+            loadRemotePage($('.layoutRightDiv'),url);
+        }
+    }
+    function initBootstrapPlugin(){
+        if($(".select").length > 0){
+            $(".select").selectpicker();
+            $(".select").on("change", function(){
+                if($(this).val() == "" || null === $(this).val()){
+                    if(!$(this).attr("multiple"))
+                        $(this).val("").find("option").removeAttr("selected").prop("selected",false);
+                }else{
+                    //$(this).find("option[value="+$(this).val()+"]").attr("selected",true);
+                }
+            });
+        }
+        if($(".datepicker").length > 0){
+            $(".datepicker").datepicker({format: 'yyyy-mm-dd',autoclose: true,language:'zh-CN'});
+        }
+        /* MESSAGE BOX */
+        $(".mb-control").on("click",function(){
+            var box = $($(this).data("box"));
+            if(box.length > 0){
+                box.toggleClass("open");
+
+                var sound = box.data("sound");
+
+                if(sound === 'alert')
+                    playAudio('alert');
+
+                if(sound === 'fail')
+                    playAudio('fail');
+
+            }
+            return false;
+        });
+        $(".mb-control-close").on("click",function(){
+            $(this).parents(".message-box").removeClass("open");
+            return false;
+        });
+        /* END MESSAGE BOX */
+    }
+    function loadRemotePage(divObj,url){
+        divObj.html("<img src='/integralpublic/static/images/spinner.gif'/>");
+        $.post(url, null,
+                function (data, textStatus) {
+                    try{
+                        divObj.html('');
+                        divObj.html(data);
+                        //if(typeof(initFunction)=="function"){
+                        // initFunction();
+                        //}
+                        initBootstrapPlugin();
+                    }catch(e){
+                        alert(e);
+                        //window.document.location.reload();
+                    }
+
+
+                }, "html");
+    }
+
+    $(function(){
+
+        String.prototype.startsWith = function(str) {
+            return this.substr(0, str.lenth) === str;
+        };
+
+        $.ajaxSetup({
+            //contentType:"application/x-www-form-urlencoded;charset=utf-8",
+            //timeout:100,
+            cache:false,
+            complete:function(XMLHttpRequest, textStatus){
+                if (XMLHttpRequest.status==401){
+                    needAuthentication();
+                }
+                if (XMLHttpRequest.status==403){
+                    //needAuthentication();
+                    alert("权限不足");
+                }
+            },
+            error : function(jqXHR, textStatus, errorThrown){
+                var msg = $.parseJSON(jqXHR.responseText).fail_key;
+                alert(msg);
+            },
+            traditional : true
+        });
+        initBootstrapPlugin();
+    });
+</script>
+
+<link rel="stylesheet" type="text/css" href="./落户公示36_files/biaodan.css">
+<link rel="stylesheet" type="text/css" href="./落户公示36_files/style(1).css">
+
+
+</head><body><div class="modal" id="modalBasic" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="defModalHead">提示</h4>
+            </div>
+            <div class="modal-body" id="defModalBody">
+               消息
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="defModalFooter" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="modalEdit" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="defModalHeadEdit" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            
+                
+                
+            
+            <div class="modal-body" id="defModalBodyEdit">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <title>落户公示</title>
+<script>
+    $(function(){
+        turnPage(0)
+    });
+
+    function turnPage(page){
+        var obj = {};
+        obj.name = encodeURIComponent($('#name').val());
+        obj.rows = $(".pageSize").val();
+        obj.page = page;
+        $.post("/integralpublic/settlePerson/tablePage", obj, function(data){
+            $("#tableDiv").html(data);
+        }, "html");
+    }
+
+    function searchInfo() {
+        if($("#name").val()=="" && $("#code").val()==""){
+            alert("请输入姓名和验证码");
+        }else if($("#name").val()=="" && $("#code").val()!=""){
+            alert("请输入姓名");
+        }else if($("#name").val()!="" && $("#code").val()==""){
+            alert("请输入验证码");
+        }else{
+            $.post("/integralpublic/settlePerson/validateCode",{name:$("#name").val(), code: $("#code").val()}, function(data){
+                if(data.result){
+                    changeCode();
+                    turnPage(0);
+                }else{
+                    alert(data.message);
+                }
+            }, "json");
+        }
+    }
+
+    function changeCode(){
+        $('#codeImg').attr('src', '/integralpublic/generateCode?' + Math.floor(Math.random() * 100));
+    }
+
+</script>
+
+
+<div class="top_header clearfix">
+    2019年积分落户公示名单
+</div>
+<div class="body-wrapper clearfix">
+    
+        
+    
+    <div class="box">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="biaodan" style="margin: 0;">
+            <tbody><tr>
+                <td colspan="3">
+                    
+                    
+                    姓名
+                    <input type="text" id="name" style="width:180px;">
+                    验证码
+                    <input type="text" id="code" name="code" style="width:100px;">
+                    <img src="./落户公示36_files/generateCode" id="codeImg" style="cursor: pointer;width: 127px;height: 30px;" onclick="changeCode()">
+                    <a href="javascript:void(0);" class="anniu" onclick="searchInfo();">查询</a>
+                    <a href="javascript:void(0);" class="anniu" onclick="location.reload();">返回首页</a>
+                </td>
+            </tr>
+        </tbody></table>
+        &nbsp;
+        <div id="tableDiv">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+<script>
+    $(function () {
+        var options = {
+            currentPage: '36',
+            totalPages: '61',
+            alignment: 'right',
+            onPageClicked: function(event, originalEvent, type, page){
+                if(page != '36'){
+                    turnPage((page-1)*'100');
+                }
+            }
+        }
+        $('.pageLimit').bootstrapPaginator(options);
+
+    });
+</script>
+<table class="blue_table1" width="100%">
+    <thead>
+    <tr>
+        <th height="40" bgcolor="#0867b7">序号</th>
+        <th height="40" bgcolor="#0867b7">姓名</th>
+        <th height="40" bgcolor="#0867b7">出生年月</th>
+        <th height="40" bgcolor="#0867b7">单位名称</th>
+        <th height="40" bgcolor="#0867b7">积分分值</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+        
+            <tr>
+                <td height="35" align="center">3501</td>
+                <td height="35" align="center">赵启胜</td>
+                <td height="35" align="center">1976-11</td>
+                <td height="35" align="center">用友能源科技有限公司</td>
+                <td height="35" align="center">95.58</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3502</td>
+                <td height="35" align="center">钱雪彪</td>
+                <td height="35" align="center">1978-12</td>
+                <td height="35" align="center">杭州迪普科技股份有限公司北京技术开发中心</td>
+                <td height="35" align="center">95.58</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3503</td>
+                <td height="35" align="center">武先斌</td>
+                <td height="35" align="center">1976-01</td>
+                <td height="35" align="center">广联达科技股份有限公司</td>
+                <td height="35" align="center">95.58</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3504</td>
+                <td height="35" align="center">马金健</td>
+                <td height="35" align="center">1983-01</td>
+                <td height="35" align="center">华夏银行股份有限公司北京分行</td>
+                <td height="35" align="center">95.58</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3505</td>
+                <td height="35" align="center">王云</td>
+                <td height="35" align="center">1982-02</td>
+                <td height="35" align="center">国际商业机器（中国）投资有限公司</td>
+                <td height="35" align="center">95.58</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3506</td>
+                <td height="35" align="center">周永涛</td>
+                <td height="35" align="center">1980-08</td>
+                <td height="35" align="center">中国工商银行股份有限公司北京市分行</td>
+                <td height="35" align="center">95.58</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3507</td>
+                <td height="35" align="center">陈伟</td>
+                <td height="35" align="center">1979-03</td>
+                <td height="35" align="center">北京国双科技有限公司</td>
+                <td height="35" align="center">95.58</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3508</td>
+                <td height="35" align="center">姬晓翠</td>
+                <td height="35" align="center">1983-04</td>
+                <td height="35" align="center">腾讯科技（北京）有限公司</td>
+                <td height="35" align="center">95.58</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3509</td>
+                <td height="35" align="center">姜益平</td>
+                <td height="35" align="center">1980-12</td>
+                <td height="35" align="center">中国国际技术智力合作有限公司外企服务分公司</td>
+                <td height="35" align="center">95.58</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3510</td>
+                <td height="35" align="center">宋子明</td>
+                <td height="35" align="center">1982-12</td>
+                <td height="35" align="center">北京和远科技有限公司</td>
+                <td height="35" align="center">95.58</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3511</td>
+                <td height="35" align="center">吴峻岩</td>
+                <td height="35" align="center">1978-01</td>
+                <td height="35" align="center">北京佳益开源医疗器械有限公司</td>
+                <td height="35" align="center">95.58</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3512</td>
+                <td height="35" align="center">赵静文</td>
+                <td height="35" align="center">1975-02</td>
+                <td height="35" align="center">洛娃科技实业集团有限公司</td>
+                <td height="35" align="center">95.58</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3513</td>
+                <td height="35" align="center">王超</td>
+                <td height="35" align="center">1977-11</td>
+                <td height="35" align="center">中铁电气化局集团第一工程有限公司</td>
+                <td height="35" align="center">95.58</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3514</td>
+                <td height="35" align="center">张明</td>
+                <td height="35" align="center">1979-06</td>
+                <td height="35" align="center">北京浩轩宏图科技有限公司</td>
+                <td height="35" align="center">95.55</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3515</td>
+                <td height="35" align="center">黎哲</td>
+                <td height="35" align="center">1982-01</td>
+                <td height="35" align="center">北京华为数字技术有限公司</td>
+                <td height="35" align="center">95.55</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3516</td>
+                <td height="35" align="center">彭维</td>
+                <td height="35" align="center">1979-12</td>
+                <td height="35" align="center">北京华为数字技术有限公司</td>
+                <td height="35" align="center">95.55</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3517</td>
+                <td height="35" align="center">郝德欣</td>
+                <td height="35" align="center">1981-06</td>
+                <td height="35" align="center">北京凯恩帝机电技术有限公司</td>
+                <td height="35" align="center">95.55</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3518</td>
+                <td height="35" align="center">李晨玉</td>
+                <td height="35" align="center">1976-08</td>
+                <td height="35" align="center">《健康时报》社有限责任公司</td>
+                <td height="35" align="center">95.55</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3519</td>
+                <td height="35" align="center">刘湘捷</td>
+                <td height="35" align="center">1977-07</td>
+                <td height="35" align="center">北京亿赛通网络安全技术有限公司</td>
+                <td height="35" align="center">95.55</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3520</td>
+                <td height="35" align="center">郝志东</td>
+                <td height="35" align="center">1974-09</td>
+                <td height="35" align="center">北京智汇空间科技有限公司</td>
+                <td height="35" align="center">95.55</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3521</td>
+                <td height="35" align="center">孙晓奇</td>
+                <td height="35" align="center">1981-10</td>
+                <td height="35" align="center">北京比亚迪模具有限公司</td>
+                <td height="35" align="center">95.55</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3522</td>
+                <td height="35" align="center">丁华明</td>
+                <td height="35" align="center">1975-09</td>
+                <td height="35" align="center">北京亚细亚智业科技有限公司</td>
+                <td height="35" align="center">95.55</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3523</td>
+                <td height="35" align="center">魏举</td>
+                <td height="35" align="center">1972-11</td>
+                <td height="35" align="center">中建二局安装工程有限公司</td>
+                <td height="35" align="center">95.54</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3524</td>
+                <td height="35" align="center">李伟涛</td>
+                <td height="35" align="center">1978-11</td>
+                <td height="35" align="center">英能科能源技术（北京）有限公司</td>
+                <td height="35" align="center">95.54</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3525</td>
+                <td height="35" align="center">刘晓敏</td>
+                <td height="35" align="center">1978-06</td>
+                <td height="35" align="center">北京中电众维软件评测中心</td>
+                <td height="35" align="center">95.54</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3526</td>
+                <td height="35" align="center">刘华东</td>
+                <td height="35" align="center">1973-09</td>
+                <td height="35" align="center">北京美丫美科技有限公司</td>
+                <td height="35" align="center">95.54</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3527</td>
+                <td height="35" align="center">刘来元</td>
+                <td height="35" align="center">1977-05</td>
+                <td height="35" align="center">北京永诚恒通设备安装有限公司</td>
+                <td height="35" align="center">95.54</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3528</td>
+                <td height="35" align="center">王晓艳</td>
+                <td height="35" align="center">1978-01</td>
+                <td height="35" align="center">北京型动客科技有限公司</td>
+                <td height="35" align="center">95.54</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3529</td>
+                <td height="35" align="center">侯传才</td>
+                <td height="35" align="center">1976-04</td>
+                <td height="35" align="center">北京华联第一太平商业物业管理有限公司</td>
+                <td height="35" align="center">95.54</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3530</td>
+                <td height="35" align="center">李中宝</td>
+                <td height="35" align="center">1974-04</td>
+                <td height="35" align="center">北京国铁天勤文化发展有限公司</td>
+                <td height="35" align="center">95.54</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3531</td>
+                <td height="35" align="center">逯利红</td>
+                <td height="35" align="center">1977-08</td>
+                <td height="35" align="center">中铁电气化铁路运营管理有限公司</td>
+                <td height="35" align="center">95.54</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3532</td>
+                <td height="35" align="center">路建光</td>
+                <td height="35" align="center">1973-03</td>
+                <td height="35" align="center">北京艺豪建筑装饰设计工程有限公司</td>
+                <td height="35" align="center">95.54</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3533</td>
+                <td height="35" align="center">贾文枝</td>
+                <td height="35" align="center">1973-04</td>
+                <td height="35" align="center">北京艺豪建筑装饰设计工程有限公司</td>
+                <td height="35" align="center">95.54</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3534</td>
+                <td height="35" align="center">刘国俊</td>
+                <td height="35" align="center">1975-03</td>
+                <td height="35" align="center">蜂行天下供应链管理（北京）有限公司</td>
+                <td height="35" align="center">95.54</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3535</td>
+                <td height="35" align="center">杨友兴</td>
+                <td height="35" align="center">1978-08</td>
+                <td height="35" align="center">北京欧拓技术有限公司</td>
+                <td height="35" align="center">95.54</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3536</td>
+                <td height="35" align="center">马占峰</td>
+                <td height="35" align="center">1981-01</td>
+                <td height="35" align="center">北京科兴生物制品有限公司</td>
+                <td height="35" align="center">95.54</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3537</td>
+                <td height="35" align="center">孙柏林</td>
+                <td height="35" align="center">1974-09</td>
+                <td height="35" align="center">北京明德源能科技有限公司</td>
+                <td height="35" align="center">95.54</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3538</td>
+                <td height="35" align="center">王书海</td>
+                <td height="35" align="center">1973-07</td>
+                <td height="35" align="center">北京惠通陆华汽车服务有限公司</td>
+                <td height="35" align="center">95.54</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3539</td>
+                <td height="35" align="center">鲍楠楠</td>
+                <td height="35" align="center">1977-12</td>
+                <td height="35" align="center">国际商业机器（中国）有限公司北京分公司</td>
+                <td height="35" align="center">95.54</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3540</td>
+                <td height="35" align="center">郑子杰</td>
+                <td height="35" align="center">1978-11</td>
+                <td height="35" align="center">北京颂雅风文化传媒有限责任公司</td>
+                <td height="35" align="center">95.54</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3541</td>
+                <td height="35" align="center">刘奇志</td>
+                <td height="35" align="center">1976-04</td>
+                <td height="35" align="center">中国光大银行股份有限公司</td>
+                <td height="35" align="center">95.54</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3542</td>
+                <td height="35" align="center">孟丽杰</td>
+                <td height="35" align="center">1977-12</td>
+                <td height="35" align="center">朔黄铁路发展有限责任公司</td>
+                <td height="35" align="center">95.54</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3543</td>
+                <td height="35" align="center">岳东林</td>
+                <td height="35" align="center">1980-12</td>
+                <td height="35" align="center">北京搜狐新动力信息技术有限公司</td>
+                <td height="35" align="center">95.54</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3544</td>
+                <td height="35" align="center">李耀东</td>
+                <td height="35" align="center">1980-06</td>
+                <td height="35" align="center">国际商业机器（中国）有限公司北京分公司</td>
+                <td height="35" align="center">95.51</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3545</td>
+                <td height="35" align="center">李哲龙</td>
+                <td height="35" align="center">1978-03</td>
+                <td height="35" align="center">北京中建华威建设发展有限公司</td>
+                <td height="35" align="center">95.51</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3546</td>
+                <td height="35" align="center">王彩云</td>
+                <td height="35" align="center">1975-12</td>
+                <td height="35" align="center">颇尔（中国）有限公司</td>
+                <td height="35" align="center">95.51</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3547</td>
+                <td height="35" align="center">李瑞欣</td>
+                <td height="35" align="center">1980-01</td>
+                <td height="35" align="center">中建材信息技术股份有限公司</td>
+                <td height="35" align="center">95.51</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3548</td>
+                <td height="35" align="center">陶景涛</td>
+                <td height="35" align="center">1975-04</td>
+                <td height="35" align="center">北京中海文设备安装有限公司</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3549</td>
+                <td height="35" align="center">林善亮</td>
+                <td height="35" align="center">1975-09</td>
+                <td height="35" align="center">北京中网华通设计咨询有限公司</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3550</td>
+                <td height="35" align="center">张立世</td>
+                <td height="35" align="center">1978-01</td>
+                <td height="35" align="center">索尼移动通信产品（中国）有限公司</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3551</td>
+                <td height="35" align="center">邹琳</td>
+                <td height="35" align="center">1978-04</td>
+                <td height="35" align="center">北京先进数通信息技术股份公司</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3552</td>
+                <td height="35" align="center">蒋超</td>
+                <td height="35" align="center">1972-04</td>
+                <td height="35" align="center">北京中海新城置业有限公司</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3553</td>
+                <td height="35" align="center">秘松波</td>
+                <td height="35" align="center">1976-08</td>
+                <td height="35" align="center">北京易云达科技有限公司</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3554</td>
+                <td height="35" align="center">常耀宗</td>
+                <td height="35" align="center">1981-06</td>
+                <td height="35" align="center">北京四方继保自动化股份有限公司</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3555</td>
+                <td height="35" align="center">徐远航</td>
+                <td height="35" align="center">1978-02</td>
+                <td height="35" align="center">北京信安世纪科技股份有限公司</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3556</td>
+                <td height="35" align="center">白璐</td>
+                <td height="35" align="center">1980-02</td>
+                <td height="35" align="center">北京中冶和坤天冕工程技术有限公司</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3557</td>
+                <td height="35" align="center">许亮</td>
+                <td height="35" align="center">1979-03</td>
+                <td height="35" align="center">康普电讯（上海）有限公司北京分公司</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3558</td>
+                <td height="35" align="center">董晓玲</td>
+                <td height="35" align="center">1976-08</td>
+                <td height="35" align="center">索恩照明（广州）有限公司北京分公司</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3559</td>
+                <td height="35" align="center">刘泉</td>
+                <td height="35" align="center">1978-05</td>
+                <td height="35" align="center">北京鼎力投资有限公司</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3560</td>
+                <td height="35" align="center">张丽艳</td>
+                <td height="35" align="center">1975-06</td>
+                <td height="35" align="center">北京紫光在线教育科技有限公司</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3561</td>
+                <td height="35" align="center">邵彤</td>
+                <td height="35" align="center">1975-03</td>
+                <td height="35" align="center">北京博得交通设备有限公司</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3562</td>
+                <td height="35" align="center">吴雅聪</td>
+                <td height="35" align="center">1973-04</td>
+                <td height="35" align="center">亚信科技（成都）有限公司北京分公司</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3563</td>
+                <td height="35" align="center">方兰英</td>
+                <td height="35" align="center">1974-12</td>
+                <td height="35" align="center">北京润德口腔门诊部有限公司</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3564</td>
+                <td height="35" align="center">于明刚</td>
+                <td height="35" align="center">1978-09</td>
+                <td height="35" align="center">北京京港地铁有限公司</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3565</td>
+                <td height="35" align="center">陈彬</td>
+                <td height="35" align="center">1983-08</td>
+                <td height="35" align="center">北京达佳互联信息技术有限公司</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3566</td>
+                <td height="35" align="center">刘海伟</td>
+                <td height="35" align="center">1978-01</td>
+                <td height="35" align="center">北京中农大网络发展有限公司</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3567</td>
+                <td height="35" align="center">韩忠强</td>
+                <td height="35" align="center">1973-09</td>
+                <td height="35" align="center">北京诚通新新建设有限公司</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3568</td>
+                <td height="35" align="center">许永江</td>
+                <td height="35" align="center">1975-12</td>
+                <td height="35" align="center">北京拉卡拉小额贷款有限责任公司</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3569</td>
+                <td height="35" align="center">全松玉</td>
+                <td height="35" align="center">1979-09</td>
+                <td height="35" align="center">韩亚银行（中国）有限公司</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3570</td>
+                <td height="35" align="center">王阳</td>
+                <td height="35" align="center">1981-10</td>
+                <td height="35" align="center">百度在线网络技术（北京）有限公司</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3571</td>
+                <td height="35" align="center">桑月秋</td>
+                <td height="35" align="center">1979-04</td>
+                <td height="35" align="center">北京同方软件有限公司</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3572</td>
+                <td height="35" align="center">黄河</td>
+                <td height="35" align="center">1977-05</td>
+                <td height="35" align="center">国际商业机器（中国）有限公司北京分公司</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3573</td>
+                <td height="35" align="center">姜华伟</td>
+                <td height="35" align="center">1977-12</td>
+                <td height="35" align="center">北京博思致新互联网科技有限责任公司</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3574</td>
+                <td height="35" align="center">柴选</td>
+                <td height="35" align="center">1975-10</td>
+                <td height="35" align="center">《中国摄影报》社</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3575</td>
+                <td height="35" align="center">贾永东</td>
+                <td height="35" align="center">1978-05</td>
+                <td height="35" align="center">北京威腾创先科技有限公司</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3576</td>
+                <td height="35" align="center">戴胜超</td>
+                <td height="35" align="center">1980-04</td>
+                <td height="35" align="center">超满亿家福（北京）科技有限公司</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3577</td>
+                <td height="35" align="center">李煜</td>
+                <td height="35" align="center">1981-09</td>
+                <td height="35" align="center">北京华为数字技术有限公司</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3578</td>
+                <td height="35" align="center">张涛</td>
+                <td height="35" align="center">1973-08</td>
+                <td height="35" align="center">北京建院装饰工程设计有限公司</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3579</td>
+                <td height="35" align="center">李权</td>
+                <td height="35" align="center">1977-06</td>
+                <td height="35" align="center">联想（北京）有限公司</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3580</td>
+                <td height="35" align="center">王相亭</td>
+                <td height="35" align="center">1979-06</td>
+                <td height="35" align="center">北京安盟信息技术股份有限公司</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3581</td>
+                <td height="35" align="center">吴晶</td>
+                <td height="35" align="center">1977-11</td>
+                <td height="35" align="center">北京新诺美卓科技发展有限公司</td>
+                <td height="35" align="center">95.50</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3582</td>
+                <td height="35" align="center">司建朝</td>
+                <td height="35" align="center">1979-09</td>
+                <td height="35" align="center">北京精量科技有限公司</td>
+                <td height="35" align="center">95.46</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3583</td>
+                <td height="35" align="center">王刚</td>
+                <td height="35" align="center">1978-06</td>
+                <td height="35" align="center">中国石油天然气股份有限公司管道北京输油气分公司</td>
+                <td height="35" align="center">95.46</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3584</td>
+                <td height="35" align="center">袁明超</td>
+                <td height="35" align="center">1978-09</td>
+                <td height="35" align="center">北京华为数字技术有限公司</td>
+                <td height="35" align="center">95.46</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3585</td>
+                <td height="35" align="center">邓军</td>
+                <td height="35" align="center">1978-05</td>
+                <td height="35" align="center">科凝东方热工科技（北京）有限公司</td>
+                <td height="35" align="center">95.46</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3586</td>
+                <td height="35" align="center">贺欢</td>
+                <td height="35" align="center">1983-05</td>
+                <td height="35" align="center">北京华为数字技术有限公司</td>
+                <td height="35" align="center">95.46</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3587</td>
+                <td height="35" align="center">王巍</td>
+                <td height="35" align="center">1978-10</td>
+                <td height="35" align="center">北京集顺工程咨询有限公司</td>
+                <td height="35" align="center">95.46</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3588</td>
+                <td height="35" align="center">孙玉丽</td>
+                <td height="35" align="center">1976-07</td>
+                <td height="35" align="center">北京科尔建筑节能技术有限公司</td>
+                <td height="35" align="center">95.46</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3589</td>
+                <td height="35" align="center">何超</td>
+                <td height="35" align="center">1980-05</td>
+                <td height="35" align="center">合一网络技术（北京）有限公司</td>
+                <td height="35" align="center">95.46</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3590</td>
+                <td height="35" align="center">严涛</td>
+                <td height="35" align="center">1972-05</td>
+                <td height="35" align="center">北京五合国际工程设计顾问有限公司</td>
+                <td height="35" align="center">95.46</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3591</td>
+                <td height="35" align="center">孙磊</td>
+                <td height="35" align="center">1981-10</td>
+                <td height="35" align="center">北京思德泰科科技发展有限公司</td>
+                <td height="35" align="center">95.46</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3592</td>
+                <td height="35" align="center">郭佳春</td>
+                <td height="35" align="center">1984-07</td>
+                <td height="35" align="center">北京华为数字技术有限公司</td>
+                <td height="35" align="center">95.46</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3593</td>
+                <td height="35" align="center">杜朋</td>
+                <td height="35" align="center">1976-03</td>
+                <td height="35" align="center">西门子工厂自动化工程有限公司</td>
+                <td height="35" align="center">95.46</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3594</td>
+                <td height="35" align="center">静雅婷</td>
+                <td height="35" align="center">1980-01</td>
+                <td height="35" align="center">凤仪文化娱乐集团有限公司</td>
+                <td height="35" align="center">95.46</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3595</td>
+                <td height="35" align="center">杨娜</td>
+                <td height="35" align="center">1977-12</td>
+                <td height="35" align="center">中国石油天然气股份有限公司北京销售分公司</td>
+                <td height="35" align="center">95.46</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3596</td>
+                <td height="35" align="center">郝斌</td>
+                <td height="35" align="center">1976-10</td>
+                <td height="35" align="center">中国石油天然气股份有限公司北京销售分公司</td>
+                <td height="35" align="center">95.46</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3597</td>
+                <td height="35" align="center">邓锴</td>
+                <td height="35" align="center">1975-10</td>
+                <td height="35" align="center">中船电子科技（三亚）有限公司北京分公司</td>
+                <td height="35" align="center">95.46</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3598</td>
+                <td height="35" align="center">敖青</td>
+                <td height="35" align="center">1982-05</td>
+                <td height="35" align="center">北京外企人力资源服务有限公司</td>
+                <td height="35" align="center">95.46</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3599</td>
+                <td height="35" align="center">张家浩</td>
+                <td height="35" align="center">1976-09</td>
+                <td height="35" align="center">北京金色华勤数据服务有限公司</td>
+                <td height="35" align="center">95.46</td>
+            </tr>
+        
+            <tr>
+                <td height="35" align="center">3600</td>
+                <td height="35" align="center">黎立</td>
+                <td height="35" align="center">1976-05</td>
+                <td height="35" align="center">北京《财经》杂志社有限公司</td>
+                <td height="35" align="center">95.46</td>
+            </tr>
+        
+    
+    
+    </tbody>
+</table>
+<div>
+    <div style="margin: 10px 0;width: 50%;" class="pull-left">
+        显示第3501到第3600条记录，总共6007条记录
+        
+            ,每页显示
+            <select name="pageSize" class="pageSize" onchange="turnPage(0)">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+                <option value="100" selected="">100</option>
+            </select>条
+        
+    </div>
+    <div class="pagination pagination-right" style="margin: 10px 0;width: 50%;"><ul><li><a title="Go to first page">&lt;&lt;</a></li><li><a title="Go to previous page">&lt;</a></li><li class="active"><a title="Current page is 36">36</a></li><li><a title="Go to page 37">37</a></li><li><a title="Go to page 38">38</a></li><li><a title="Go to page 39">39</a></li><li><a title="Go to page 40">40</a></li><li><a title="Go to next page">&gt;</a></li><li><a title="Go to last page">&gt;&gt;</a></li></ul></div>
+</div>
+
+</div>
+    </div>
+</div>
+<div class="footer">北京市人力资源和社会保障局 版权所有
+    ICP备案序号:京ICP备05056884号 京公网安备:110102000777</div>
+<!-- 首都之窗量化代码 -->
+<script type="text/javascript" src="./落户公示36_files/gs.js"></script>
+<!-- trs量化代码 -->
+<noscript><img src="http://ta.trs.cn/c/1.gif?mpId=365&jsoff=1" style="border:0" alt="" /></noscript>
+<script>
+    var _taq = _taq || [];
+    _taq.home = 'http://ta.trs.cn/c';
+    _taq.push(['_mpId', '365']);
+    _taq.push(['_cli', '1']);
+    (function(d, o, t) {
+        if (window.inTRSDesignMode) return;
+        var ma = d.createElement(o); ma.async = true; ma.commonresource="1"; ma.src = t;
+        var s = d.getElementsByTagName(o)[0]; s.parentNode.insertBefore(ma, s);
+    })(document, 'script', 'http://ta.trs.cn/c/js/ta.js');
+</script>
+
+
+
+</body></html>
